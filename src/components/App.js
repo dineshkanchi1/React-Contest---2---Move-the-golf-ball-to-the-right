@@ -14,9 +14,7 @@ class App extends Component {
   }
 
   //call back function
-  buttonClickHandler() {
-    this.setState({ renderBall: true });
-
+  handler() {
     window.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") {
         this.setState({
@@ -27,6 +25,9 @@ class App extends Component {
         });
       }
     });
+  }
+  buttonClickHandler() {
+    this.setState({ renderBall: true });
   }
   renderChoice() {
     if (this.state.renderBall) {
@@ -39,7 +40,9 @@ class App extends Component {
   }
 
   //bind ArrowRight keydown event
-  componentDidMount() {}
+  componentDidMount() {
+    this.handler();
+  }
 
   render() {
     return <div className="playground">{this.renderChoice()}</div>;
