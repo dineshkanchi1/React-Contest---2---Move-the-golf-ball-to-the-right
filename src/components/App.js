@@ -18,16 +18,12 @@ class App extends Component {
     this.setState({ renderBall: true });
     window.addEventListener("keydown", (e) => {
       if (e.keyCode === "39") {
-        this.setState(
-          {
-            posi: this.posi + 5
-          },
-          () => {
-            ballPosition: {
-              left: this.state.posi + "px";
-            }
-          }
-        );
+        this.setState({
+          posi: this.posi + 5
+        });
+        this.setState({
+          ballPosition: { left: this.posi + "px" }
+        });
       }
     });
   }
