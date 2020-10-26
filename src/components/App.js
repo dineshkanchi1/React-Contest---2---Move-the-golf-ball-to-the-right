@@ -14,18 +14,6 @@ class App extends Component {
   }
 
   //call back function
-  handler() {
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") {
-        this.setState({
-          posi: this.state.posi + 5
-        });
-        this.setState({
-          ballPosition: { left: this.state.posi + "px" }
-        });
-      }
-    });
-  }
   buttonClickHandler() {
     this.setState({ renderBall: true });
   }
@@ -45,7 +33,16 @@ class App extends Component {
 
   //bind ArrowRight keydown event
   componentDidMount() {
-    this.handler();
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        this.setState({
+          posi: this.state.posi + 5
+        });
+        this.setState({
+          ballPosition: { left: this.state.posi + "px" }
+        });
+      }
+    });
   }
 
   render() {
