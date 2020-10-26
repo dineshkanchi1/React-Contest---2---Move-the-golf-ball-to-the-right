@@ -31,7 +31,11 @@ class App extends Component {
   }
   renderChoice() {
     if (this.state.renderBall) {
-      return <div className="ball" style={this.state.ballPosition}></div>;
+      return (
+        <>
+          <div className="ball" style={this.state.ballPosition}></div>
+        </>
+      );
     } else {
       return (
         <button onClick={this.buttonClickHandler}>Click For One Ball</button>
@@ -45,7 +49,11 @@ class App extends Component {
   }
 
   render() {
-    return <div className="playground">{this.renderChoice()}</div>;
+    return (
+      <>
+        <div className="playground">{this.renderChoice()}</div>
+      </>
+    );
   }
 }
 
