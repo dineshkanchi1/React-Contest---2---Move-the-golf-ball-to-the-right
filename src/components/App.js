@@ -35,7 +35,9 @@ class App extends Component {
           posi: this.state.posi + 5
         });
         this.setState({
-          ballPosition: { left: this.state.posi + "px" }
+          ballPosition: {
+            left: +this.state.ballPosition.left.slice(0, -2) + 5 + "px"
+          }
         });
       }
     });
